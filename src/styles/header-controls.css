@@ -1,0 +1,26 @@
+/* header-controls.css – Pogrubienie kroju „display”, wybór czasu na zadanie, przełączniki motywu i języka. */
+/* krój „display” – zawsze maksymalnie pogrubiony, także gdy brak Arial Black (Linux, Android) */
+h1, h2, h3, .logo-title, .verdict, .announce-title, .big-score, .start-btn, .hud-round, .player-name, .bin-title, .stat-grid b, .place, .gauge-readout, .shelf-no, .pulse-btn span { font-weight: 900; }
+/* wybór czasu na zadanie */
+.time-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.time-stepper { display: inline-flex; align-items: center; gap: 10px; background: var(--surface); border: 3px solid var(--line); border-radius: 16px; padding: 6px; }
+.icon-btn.big { width: 52px; height: 52px; }
+.time-value { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 150px; font-family: var(--display); font-weight: 900; font-size: 1.4rem; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.time-select { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.time-desc { width: 100%; margin: 0; }
+/* przełącznik języka */
+.menu-top { position: relative; }
+.lang-switch { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--surface); border: 2px solid var(--line); }
+.menu-top .lang-switch { position: absolute; top: 0; right: 0; z-index: 2; }
+.lang-switch button { min-width: 48px; min-height: 40px; border: 0; border-radius: 9px; background: transparent; font-weight: 900; letter-spacing: 0.05em; }
+.lang-switch button.active { background: var(--red); color: #fff; }
+@media (max-width: 640px) { .menu-top .lang-switch { position: static; margin-bottom: 8px; } }
+:root:lang(en) .level-card.active::after, :root:lang(en) .mode-card.active::after { content: '✓ selected'; }
+/* przełączniki w nagłówku: motyw + język */
+.top-controls { position: absolute; top: 0; right: 0; z-index: 2; display: flex; gap: 8px; align-items: center; }
+.menu-top .top-controls .lang-switch { position: static; }
+.theme-switch { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--surface); border: 2px solid var(--line); }
+.theme-switch button { display: inline-grid; place-items: center; min-width: 44px; min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: var(--muted-c); }
+.theme-switch button.active { background: var(--red); color: #fff; }
+.theme-switch button:hover:not(.active) { color: var(--text); }
+@media (max-width: 640px) { .top-controls { position: static; justify-content: center; margin-bottom: 8px; } }

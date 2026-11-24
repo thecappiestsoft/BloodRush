@@ -1,0 +1,28 @@
+/* menu.css – Menu główne: wybór poziomu, trybu gry i przycisk START. */
+/* ---------- menu ---------- */
+.menu { display: flex; flex-direction: column; gap: 14px; }
+.menu-top { text-align: center; padding: 10px 0 4px; }
+.tagline { color: var(--text-2); max-width: 620px; margin: 10px auto 0; }
+.menu-section h2 { color: var(--accent-text); }
+.level-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.level-card, .mode-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left;
+  padding: 14px; border-radius: var(--radius); border: 3px solid var(--line); background: var(--surface); box-shadow: var(--shadow); transition: transform 0.1s;
+}
+.level-card:hover, .mode-card:hover { transform: translateY(-2px); }
+.level-card.active, .mode-card.active { border-color: var(--yellow); background: var(--active-bg); }
+.level-card.active::after, .mode-card.active::after { content: '✓ wybrano'; font-size: 0.75rem; font-weight: 900; color: var(--accent-text); }
+.level-icon { font-size: 1.8rem; }
+.level-card small { color: var(--accent-text); font-weight: 800; }
+.level-desc { color: var(--muted-2); font-size: 0.88rem; }
+.mode-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.mode-card small { color: var(--muted-2); font-size: 0.82rem; }
+.mode-card svg { color: var(--red); }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; background: var(--sunken); padding: 5px; border-radius: 14px; }
+.seg button { border: 0; padding: 10px 14px; border-radius: 10px; background: transparent; font-weight: 800; min-height: 44px; }
+.seg button.active { background: var(--red); color: #fff; }
+.start-btn { align-self: center; font-size: 1.6rem; padding: 16px 48px; min-height: 70px; background: linear-gradient(180deg, #ff5566, var(--red)); color: #fff; border-radius: 20px; font-family: var(--display); letter-spacing: 0.06em; margin-top: 4px; }
+.menu-bottom { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin-top: 4px; }
+.sound-ctrl, .scale-ctrl { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 2px solid var(--line); padding: 6px 10px; border-radius: 14px; }
+.scale-ctrl span { font-weight: 900; font-size: 1.2rem; }
+input[type='range'] { accent-color: var(--red); width: 120px; }

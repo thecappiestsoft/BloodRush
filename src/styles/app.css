@@ -1,0 +1,15 @@
+/*
+ * BLOOD RUSH – główny arkusz stylów.
+ * Style są podzielone na pliki tematyczne; KOLEJNOŚĆ importów ma znaczenie
+ * (późniejsze reguły nadpisują wcześniejsze), więc dopisuj nowe pliki na końcu.
+ * Kolory obu motywów (ciemny/jasny) są zmiennymi CSS na początku base.css.
+ */
+@import './base.css';
+@import './controls.css';
+@import './menu.css';
+@import './game.css';
+@import './minigames.css';
+@import './pages.css';
+@import './teacher.css';
+@import './responsive.css';
+@import './header-controls.css';

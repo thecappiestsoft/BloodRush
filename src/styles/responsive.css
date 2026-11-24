@@ -1,0 +1,40 @@
+/* responsive.css – Ograniczenie ruchu (dostępność) i dopasowanie do tabletów oraz telefonów. */
+/* ---------- ograniczenie ruchu ---------- */
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+
+/* ---------- responsywność ---------- */
+@media (max-width: 900px) {
+  .mode-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mode-cards .mode-card:last-child { grid-column: span 2; }
+  .grid2 { grid-template-columns: 1fr; }
+  .game-list li { grid-template-columns: 60px 1fr; }
+  .game-list li .lv-badges, .game-list li .test-btns { grid-column: 2; }
+  .bank-list li { grid-template-columns: 1fr auto auto; }
+  .bank-list li .type-pill, .bank-list li .bank-meta { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 640px) {
+  .app-body { padding: 10px 10px; }
+  .level-cards { grid-template-columns: 1fr; }
+  .level-card { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .level-desc { width: 100%; }
+  .hud { grid-template-columns: auto 1fr; gap: 6px; padding: 6px 8px; }
+  .hud-timer { grid-column: 1 / -1; grid-row: 2; }
+  .hud-right { justify-self: end; }
+  .matcher { gap: 8px; }
+  .match-item { font-size: 0.85rem; padding: 8px; }
+  .choice-grid { grid-template-columns: 1fr 1fr !important; }
+  .stickers { gap: 10px; }
+  .sticker { font-size: 1rem; min-height: 80px; }
+  .slot { font-size: 0.66rem; padding: 2px 4px; }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bins { grid-template-columns: 1fr !important; }
+  .bin { min-height: 84px; }
+  .podium-row { grid-template-columns: 36px 1fr auto; }
+  .podium-row span:nth-child(n + 4) { display: none; }
+  .game-area { padding: 10px; }
+  .prompt { font-size: 1rem; }
+  .flow-node { min-width: 90px; font-size: 0.85rem; }
+  .exchange { grid-template-columns: 1fr; }
+  .start-btn { width: 100%; }
+}
+.mg.center .choice-grid, .mg.center .multi { width: min(680px, 100%); }
